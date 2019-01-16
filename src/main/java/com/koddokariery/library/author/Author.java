@@ -1,6 +1,10 @@
 package com.koddokariery.library.author;
 
+import com.koddokariery.library.book.Book;
+
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Author {
@@ -14,10 +18,10 @@ public class Author {
 
     @Column(name = "last_name")
     private String lastName;
-//
-//    @ManyToMany(mappedBy = "authors")
-//    private Set<Book> books = new HashSet<>();
-//    //constructor
+
+    @ManyToMany(mappedBy = "authors")
+    private Set<Book> bookSet = new HashSet<>();
+
 
     public Author(String firstName, String lastName) {
         this.firstName = firstName;

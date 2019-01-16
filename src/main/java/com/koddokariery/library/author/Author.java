@@ -19,7 +19,7 @@ public class Author {
     @Column(name = "last_name")
     private String lastName;
 
-    @ManyToMany(mappedBy = "authors")
+    @ManyToMany(mappedBy = "authorSet")
     private Set<Book> bookSet = new HashSet<>();
 
 

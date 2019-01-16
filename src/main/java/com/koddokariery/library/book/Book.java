@@ -19,7 +19,7 @@ public class Book {
 
     @ManyToMany
     @JoinTable(
-            name = "books_authors",
+            name = "book_author",
             joinColumns = {@JoinColumn(name = "author_id")},
             inverseJoinColumns = {@JoinColumn(name = "book_id")}
     )

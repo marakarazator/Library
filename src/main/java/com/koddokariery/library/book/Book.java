@@ -26,5 +26,52 @@ public class Book {
     private Set<Author> authorSet = new HashSet<>();
 
 
+    //setters and getters
+    public long getId() {
+        return id;
+    }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public Set<Author> getAuthorSet() {
+        return authorSet;
+    }
+
+    public void setAuthorSet(Set<Author> authorSet) {
+        this.authorSet = authorSet;
+    }
 }

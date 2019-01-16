@@ -22,13 +22,17 @@ public class Author {
     @ManyToMany(mappedBy = "authorSet")
     private Set<Book> bookSet = new HashSet<>();
 
-
-    public Author(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    //setters and getters
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public Author() {
+    public Set<Book> getBookSet() {
+        return bookSet;
+    }
+
+    public void setBookSet(Set<Book> bookSet) {
+        this.bookSet = bookSet;
     }
 
     public long getId() {

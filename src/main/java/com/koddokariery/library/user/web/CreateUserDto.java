@@ -1,59 +1,32 @@
-package com.koddokariery.library.user;
+package com.koddokariery.library.user.web;
 
+import com.koddokariery.library.user.UserRole;
 
-import javax.persistence.*;
+import javax.persistence.Enumerated;
 import java.time.LocalDateTime;
-import java.util.Date;
 
-@Entity
-@Table(name = "users")
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+public class CreateUserDto {
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdAt;
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date updatedAt;
-
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
     private String firstName;
     private String lastName;
     private String email;
     private String password;
-
-    @Enumerated(EnumType.STRING)
     private UserRole userRole;
 
-    //is it really necessary to put a constructor inti entity?
+//    public CreateUserDto(String firstName, String lastName, String email, String password, UserRole userRole) {
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.email = email;
+//        this.password = password;
+//        this.userRole = userRole;
+//    }
 
-
-
-    //setters and getters
-
-    public long getId() {
-        return id;
+    public CreateUserDto() {
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Date getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Date updatedAt) {
-        this.updatedAt = updatedAt;
-    }
+//setters and getters
 
     public String getFirstName() {
         return firstName;

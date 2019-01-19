@@ -6,12 +6,12 @@ public class UserResponse {
     private String lastName;
     private String email;
 
-//    public UserResponse(long id, String firstName, String lastName, String email) {
-//        this.id = id;
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//        this.email = email;
-//    }
+    public UserResponse(long id, String firstName, String lastName, String email) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+    }
 
     //setters and getters
 

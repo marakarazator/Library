@@ -1,4 +1,4 @@
-package com.koddokariery.library.user.web;
+package com.koddokariery.library.user;
 
 public class UserResponse {
     private long id;

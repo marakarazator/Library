@@ -1,8 +1,6 @@
-package com.koddokariery.library.user.web;
+package com.koddokariery.library.user;
 
 import com.koddokariery.library.user.UserRole;
-
-import javax.persistence.Enumerated;
 import java.time.LocalDateTime;
 
 public class CreateUserDto {

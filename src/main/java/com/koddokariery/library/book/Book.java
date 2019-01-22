@@ -1,9 +1,11 @@
 package com.koddokariery.library.book;
 
+import com.koddokariery.library.Rent.Rent;
 import com.koddokariery.library.author.Author;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -11,22 +13,26 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
     private String title;
-    private String publisher;
     private String description;
-    private String isbn;
 
-    @ManyToMany
-    @JoinTable(
-            name = "book_author",
-            joinColumns = {@JoinColumn(name = "author_id")},
-            inverseJoinColumns = {@JoinColumn(name = "book_id")}
-    )
-    private Set<Author> authorSet = new HashSet<>();
 
+    @ManyToOne
+    @JoinColumn(name = "author_id")
+    private Author author;
+
+
+    private boolean isAvailable;
+
+    @OneToMany(mappedBy = "book")
+    private List<Rent> rent;
 
     //setters and getters
+
+
+    public Book() {
+    }
+
     public long getId() {
         return id;
     }
@@ -43,14 +49,6 @@ public class Book {
         this.title = title;
     }
 
-    public String getPublisher() {
-        return publisher;
-    }
-
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -59,19 +57,27 @@ public class Book {
         this.description = description;
     }
 
-    public String getIsbn() {
-        return isbn;
+    public Author getAuthor() {
+        return author;
     }
 
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 
-    public Set<Author> getAuthorSet() {
-        return authorSet;
+    public boolean isAvailable() {
+        return isAvailable;
     }
 
-    public void setAuthorSet(Set<Author> authorSet) {
-        this.authorSet = authorSet;
+    public void setAvailable(boolean available) {
+        isAvailable = available;
+    }
+
+    public List<Rent> getRent() {
+        return rent;
+    }
+
+    public void setRent(List<Rent> rent) {
+        this.rent = rent;
     }
 }

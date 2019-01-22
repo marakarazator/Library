@@ -1,9 +1,15 @@
 package com.koddokariery.library.user;
 
 
+import com.koddokariery.library.Rent.Rent;
+
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
+import java.util.NavigableMap;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -12,21 +18,30 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdAt;
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date updatedAt;
+   // @Temporal(TemporalType.TIMESTAMP)
+    private LocalDateTime createdAt;
+
+  //  @Temporal(TemporalType.TIMESTAMP)
+    private LocalDateTime updatedAt;
 
     private String firstName;
     private String lastName;
     private String email;
     private String password;
 
+
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "user")
+   // @JoinColumn(name = "rent_id", referencedColumnName = "id")
+    private Set<Rent> rents;
+
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
 
+
     //is it really necessary to put a constructor inti entity?
 
+    public User() {
+    }
 
 
     //setters and getters
@@ -39,19 +54,19 @@ public class User {
         this.id = id;
     }
 
-    public Date getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
-    public Date getUpdatedAt() {
+    public LocalDateTime getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(Date updatedAt) {
+    public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
 

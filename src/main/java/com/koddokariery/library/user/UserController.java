@@ -1,7 +1,5 @@
 package com.koddokariery.library.user;
 
-import com.koddokariery.library.user.web.CreateUserDto;
-import com.koddokariery.library.user.web.UserResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

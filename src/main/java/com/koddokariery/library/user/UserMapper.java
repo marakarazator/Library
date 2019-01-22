@@ -1,10 +1,8 @@
 package com.koddokariery.library.user;
 
-import com.koddokariery.library.user.web.CreateUserDto;
-import com.koddokariery.library.user.web.UserResponse;
 import org.springframework.stereotype.Component;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Component
 public class UserMapper {
@@ -16,7 +14,7 @@ public class UserMapper {
 
     public User createNew(CreateUserDto createUserDto) {
         User user = new User();
-        user.setCreatedAt(new Date());
+        user.setCreatedAt(LocalDateTime.now());
         user.setFirstName(createUserDto.getFirstName());
         user.setLastName(createUserDto.getLastName());
         user.setEmail(createUserDto.getEmail());
@@ -25,4 +23,6 @@ public class UserMapper {
 
         return user;
     }
+
+
 }

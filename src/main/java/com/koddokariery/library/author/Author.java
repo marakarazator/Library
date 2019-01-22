@@ -19,27 +19,17 @@ public class Author {
     @Column(name = "last_name")
     private String lastName;
 
-    @ManyToMany(mappedBy = "authorSet")
-    private Set<Book> bookSet = new HashSet<>();
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "author")
+    private Set<Book> books;
+
 
     //setters and getters
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public Set<Book> getBookSet() {
-        return bookSet;
-    }
-
-    public void setBookSet(Set<Book> bookSet) {
-        this.bookSet = bookSet;
-    }
 
     public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -58,6 +48,14 @@ public class Author {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+//    public Book getBooks() {
+//        return books;
+//    }
+
+//    public void setBooks(Book books) {
+//        this.books = books;
+//    }
 }
 
 

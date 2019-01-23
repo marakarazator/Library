@@ -6,16 +6,22 @@ public class BookResponse {
     private String description;
     private Long authorId;
     private String authorFirstName;
+    private String  authorLastName;
 
+    //constructors
 
-
-    public BookResponse(long id, String title, String description, Long authorId, String authorFirstName) {
+    public BookResponse(long id, String title, String description, Long authorId, String authorFirstName, String authorLastName) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.authorId = authorId;
         this.authorFirstName = authorFirstName;
+        this.authorLastName = authorLastName;
     }
+
+    public BookResponse(long id, String title, String description, long id1, String firstName) {
+    }
+
 
     public long getId() {
         return id;

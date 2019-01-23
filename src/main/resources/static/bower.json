@@ -1,0 +1,25 @@
+{
+  "name": "app",
+  "authors": [
+    "Maras <lefmarek@gmail.com>"
+  ],
+  "description": "libraryFront",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "js/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.7.5",
+    "bootstrap": "^4.2.1",
+    "angular-route": "^1.7.6",
+    "angular-resource": "^1.7.6",
+    "angular-bootstrap": "^2.5.0"
+  }
+}

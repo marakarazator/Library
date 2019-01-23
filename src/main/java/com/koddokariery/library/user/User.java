@@ -1,14 +1,11 @@
 package com.koddokariery.library.user;
 
 
-import com.koddokariery.library.Rent.Rent;
+import com.koddokariery.library.rent.Rent;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.List;
-import java.util.NavigableMap;
 import java.util.Set;
 
 @Entity
@@ -19,7 +16,8 @@ public class User {
     private long id;
 
    // @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime createdAt;
+
+    private LocalDateTime createdAt = LocalDateTime.now();
 
   //  @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime updatedAt;

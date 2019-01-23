@@ -1,4 +1,4 @@
-package com.koddokariery.library.Rent;
+package com.koddokariery.library.rent;
 
 import com.koddokariery.library.book.Book;
 import com.koddokariery.library.user.User;
@@ -17,7 +17,8 @@ public class Rent {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    private LocalDateTime  timeOfRent;
+    @Column()
+    private LocalDateTime timeOfRent = LocalDateTime.now();
 
     @ManyToOne
     private Book book;
@@ -47,5 +48,13 @@ public class Rent {
 
     public void setTimeOfRent(LocalDateTime timeOfRent) {
         this.timeOfRent = timeOfRent;
+    }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
     }
 }

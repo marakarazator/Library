@@ -25,7 +25,6 @@ public class BookService {
 
     public List<BookResponse> findAllBooks(){
         return bookRepository.findAll().stream().map(bookMapper::map).collect(toList());
-        //bookRepository.findAll().map(bookMapper::map).stream().collect(Collectors.toList());
     }
 
 
@@ -34,4 +33,12 @@ public class BookService {
         Book book = bookMapper.createNew(createBookDto);
         bookRepository.save(book);
     }
+
+
+    public BookResponse getOne(Long id) {
+        Book book = bookRepository.findById(id);
+        return bookMapper.map(book);
+    }
+
+
 }

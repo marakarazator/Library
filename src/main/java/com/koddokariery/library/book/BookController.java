@@ -24,4 +24,10 @@ public class BookController {
     public void addBook(@RequestBody CreateBookDto createBookDto){
         bookService.addBook(createBookDto);
     }
+
+
+    @GetMapping("/{id}")
+    public BookResponse getOne(@PathVariable("id") Long id) {
+        return bookService.getOne(id);
+    }
 }

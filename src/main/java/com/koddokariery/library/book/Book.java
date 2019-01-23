@@ -1,12 +1,10 @@
 package com.koddokariery.library.book;
 
-import com.koddokariery.library.Rent.Rent;
+import com.koddokariery.library.rent.Rent;
 import com.koddokariery.library.author.Author;
 
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 public class Book {
@@ -22,7 +20,7 @@ public class Book {
     private Author author;
 
 
-    private boolean isAvailable;
+    private boolean isAvailable = true;
 
     @OneToMany(mappedBy = "book")
     private List<Rent> rent;

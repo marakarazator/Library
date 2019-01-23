@@ -16,6 +16,7 @@ public class UserService {
         this.userMapper = userMapper;
     }
 
+
     public List<UserResponse> getAll(){
         return userRepository.findAll().stream().map(userMapper::map).collect(Collectors.toList());
     }
@@ -25,4 +26,10 @@ public class UserService {
         User user = userMapper.createNew(createUserDto);
         userRepository.save(user);
     }
+
+    public UserResponse findOne(long id) {
+        User user = userRepository.findById(id);
+        return userMapper.map(user);
+    }
+
 }

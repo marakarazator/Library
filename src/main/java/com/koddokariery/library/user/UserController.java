@@ -10,6 +10,7 @@ import java.util.List;
 public class UserController {
 
     private final UserService userService;
+
     @Autowired
     public UserController(UserService userService) {
         this.userService = userService;
@@ -21,8 +22,13 @@ public class UserController {
     }
 
     @PostMapping
-    public void addUser(@RequestBody CreateUserDto createUserDto){
+    public void addUser(@RequestBody CreateUserDto createUserDto) {
         userService.addUser(createUserDto);
     }
 
+
+    @GetMapping("/{id}")
+    public UserResponse findById(@PathVariable("id") long id) {
+        return userService.findOne(id);
+    }
 }

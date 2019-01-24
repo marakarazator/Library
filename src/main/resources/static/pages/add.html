@@ -1,0 +1,18 @@
+<!-- przeniesiemy dodawanie po sprawdzeniu routingu  -->
+
+<div ng-controller="UserController as userControl">
+
+    <form>
+        <input type="text" ng-model="userControl.user.firstName" placeholder="First Name"><br>
+        <input type="text" ng-model="userControl.user.lastName" placeholder="Last Name"><br>
+        <input type="text" ng-model="userControl.user.email" placeholder="email"><br>
+        <input type="text" ng-model="userControl.user.password" placeholder="password"><br>
+        <input type="text" ng-model="userControl.user.userRole" placeholder="USER_ROLE, ADMIN_ROLE, EMPLOYEE_ROLE"><br>
+        <button ng-click="userControl.addUser(userControl.user)">Add User</button>
+    </form>
+    <ul>
+        <li ng-repeat="user in userControl.users">
+            {{user.id}} {{user.firstName}} {{user.lastName}}
+        </li>
+    </ul>
+</div>

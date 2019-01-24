@@ -2,107 +2,90 @@
 <html lang="en-US" ng-app="app">
 <head>
     <title>Kod do kariery</title>
+    <base href="/">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
     <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular-route.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.7.5/angular-resource.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./style/app.css">
-    <base href="/">
-
 </head>
 
 
-<!--<nav class="navbar navbar-inverse">-->
-    <!--<div class="container-fluid">-->
-        <!--<div class="navbar-header">-->
-            <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">-->
-                <!--<span class="icon-bar">asdasd</span>-->
-                <!--<span class="icon-bar"></span>-->
-                <!--<span class="icon-bar"></span>-->
-            <!--</button>-->
-            <!--<a class="navbar-brand" href="#">Logo</a>-->
-        <!--</div>-->
-        <!--<div class="collapse navbar-collapse" id="myNavbar">-->
-            <!--<ul class="nav navbar-nav">-->
-                <!--<li><a href="#">Home</a></li>-->
-                <!--<li><a href="#">About</a></li>-->
-                <!--<li><a href="#">Projects</a></li>-->
-                <!--<li><a href="#">Contact</a></li>-->
-            <!--</ul>-->
-            <!--<ul class="nav navbar-nav navbar-right">-->
-                <!--<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
-            <!--</ul>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</nav>-->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar">asdasd</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Logo</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/books">Books</a></li>
+                <li><a href="/users">Users</a></li>
+                <li><a href="/rents">Rents</a></li>
+                <li><a href="/contact">Contact</a></li>
 
-<!--<div class="container-fluid text-center">-->
-    <!--<div class="row content">-->
-        <!--<div class="col-sm-2 sidenav">-->
+                <!--</div>-->
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid text-center">
+    <div class="row content">
+        <div class="col-sm-2 sidenav">
             <!--<p><a href="#">Link</a></p>-->
             <!--<p><a href="#">Link</a></p>-->
             <!--<p><a href="#">Link</a></p>-->
-        <!--</div>-->
-        <!--<div class="col-sm-8 text-left">-->
-            <!--<h1>Not Welcome</h1>-->
-            <!--<p> Tekst </p>-->
+        </div>
+        <div class="col-sm-8 text-left">
+            <h1>Welcome</h1>
+            <p> Is angular fine - {{2-1}} </p>
+
+            <div ng-view></div>
+
+            <div>
+                <p>Input something in the input box:</p>
+                <p>Name : <input type="text" ng-model="name" placeholder="Enter name here"></p>
+                <p>Hello {{name}}</p>
+            </div>
 
 
-            <!--<div ng-controller="menuController">-->
-                <!--<h1>Aktualna strona to: {{currentPage}}</h1>-->
-                <!--<a href="/">Main</a>-->
-                <!--<a href="/customDirective">custom directives</a>-->
-                <!--<a href="/myFilter">filter</a>-->
-                <!--<a href="/api/books">Add books</a>-->
-                <!--<a href="/contact">contact</a>-->
-                <!--<link-to data="{url:'/myFilter',label:'jestem dyrektywą'}"></link-to>-->
+            <hr>
+            <h3>Test</h3>
+            <p>Lorem ipsum...</p>
+        </div>
+
+
+        <div class="col-sm-2 sidenav">
+            <!--<div class="well">-->
+                <!--<p>-->
+                    <!--Aktualna strona to: {{currentPage}}-->
+                <!--</p>-->
             <!--</div>-->
-            <!--<div ng-view></div>-->
-
-            <!--<div>-->
-                <!--<p>Input something in the input box:</p>-->
-                <!--<p>Name : <input type="text" ng-model="name" placeholder="Enter name here"></p>-->
-                <!--<h1>Hello {{name}}</h1>-->
-            <!--</div>-->
-
-
-            <!--<hr>-->
-            <!--<h3>Test</h3>-->
-            <!--<p>Lorem ipsum...</p>-->
-        <!--</div>-->
-        <!--<div class="col-sm-2 sidenav">-->
             <!--<div class="well">-->
                 <!--<p>ADS</p>-->
             <!--</div>-->
-            <!--<div class="well">-->
-                <!--<p>ADS</p>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->
+        </div>
+    </div>
+</div>
 
-<!--<footer class="container-fluid text-center">-->
-    <!--<p>Template by <a href="https://www.w3schools.com/bootstrap/bootstrap_templates.asp">w3c</a></p>-->
-<!--</footer>-->
+<footer class="container-fluid text-center">
+    <p>Template by <a href="https://www.w3schools.com/bootstrap/bootstrap_templates.asp">w3c</a></p>
+</footer>
 
-
-<!--<script src='/js/index.js'></script>-->
-
-
-<!--</body>-->
-<!--</html>-->
-
-
-<!--<html ng-app>-->
-
-<body>
-<h1>To jest jeszcze prostsze proste jak {{ 2+2 }}</h1>
-<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.js"></script>
-
+<script src='js/index.js'></script>
 </body>
-<script src='/js/index.js'></script>
 </html>
